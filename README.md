@@ -21,3 +21,47 @@ Rayo laser que cura
 
 
 Cazas y tankes tendran amtrelladora + bazooka ,
+
+Prerequisites
+sudo apt update
+sudo apt install build-essential curl nginx git
+# Install Rust if not present
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source $HOME/.cargo/env
+# Install wasm-pack
+curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+Compilation
+Build Client (Wasm):
+
+cd client
+wasm-pack build --target web --release
+This generates pkg/ inside client/.
+
+Build Server:
+
+cd server
+cargo build --release
+Binary will be at target/release/server.
+
+Installation / Running
+Nginx Configuration: Create /etc/nginx/sites-available/frontwar with correct MIME types for .wasm.
+
+server {
+    listen 80;
+    server_name localhost;
+    root /srv/FrontWar/www; # We will create this
+    
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+    
+    types {
+        application/wasm wasm;
+    }
+}
+Link it: sudo ln -s /etc/nginx/sites-available/frontwar /etc/nginx/sites-enabled/ Restart nginx: sudo systemctl restart nginx
+
+Run Server:
+
+./target/release/server
+Access: Open browser at http://localhost.
