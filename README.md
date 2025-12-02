@@ -1,8 +1,4 @@
-The Rust + WebAssembly + WebGPU game 
-Juego tipo Battlefield (shooter con vehiculos, bases, escenarios destruibles, conquista de bandera, lucha por equipos, profesiones con diferentes armas a escoger) con graficos low poly a lo minecrat o roblox. A la hora de realizar el codigo debe priorizarse la eficiencia del codigo y la funcionalidad del juego, la idea esque la gente entre, escoja un nick , una profesion de soldado (asalto, francotirador, ingeniero , medico) y una faccion, (Rusia o EEUU) al hacerlo se respauneara en una base aliada donde habra vehiculos
-
-
-
+ crear con The Rust + WebAssembly + WebGPU un juego multijugador via web que  sera tipo Battlefield y se jugara a traves de navegador (shooter con vehiculos, bases, escenarios destruibles, conquista de bandera, lucha por equipos en 2 facciones, EEUU y RUSIA, 4 profesiones con diferentes armas a escoger) con graficos low poly a lo minecraft o roblox   A la hora de realizar el codigo debe priorizarse la eficiencia del codigo y la funcionalidad del juego, la idea esque la gente entre, escoja un nick , una profesion de soldado (asalto, francotirador, ingeniero , medico) y una faccion, (Rusia o EEUU) al hacerlo se respauneara en una base aliada donde habra vehiculos,  
 equipo asalto 
 pistola 
 m16
@@ -22,3 +18,7 @@ Medico
 Uzi
 Rayo laser que cura
 2 pack de 50 escudo
+
+
+
+Cazas y tankes tendran amtrelladora + bazooka 
